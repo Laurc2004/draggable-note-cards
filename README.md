@@ -1,8 +1,5 @@
-# React + Vite
+# [draggable-note-cards](https://github.com/Laurc2004/draggable-note-cards)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 项目预览
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/user-attachments/assets/9606a8f6-e8a2-40cc-b270-d7ade2a78268)

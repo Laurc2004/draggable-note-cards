@@ -1,4 +1,4 @@
-import NotesPage from "./pages/NotesPage.jsx";
+import NotesPage from "./pages/NotesPage";
 
 
 function App() {

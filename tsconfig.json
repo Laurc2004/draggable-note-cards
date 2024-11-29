@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,  // 启用严格模式，强制类型检查
+    "jsx": "react-jsx",  // 使用 React JSX 转换
+    "esModuleInterop": true,  // 允许默认导入非模块化的库
+    "skipLibCheck": true,  // 跳过库文件的类型检查
+    "forceConsistentCasingInFileNames": true,  // 强制文件名一致性
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],  // 包含所有 TypeScript 文件
+  "exclude": ["node_modules"]  // 排除 node_modules
+}

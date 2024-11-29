@@ -2,33 +2,33 @@ import {Note} from "../compoments/NoteCard";
 
 export const fakeData: Note[] = [
   {
-    body: 'Resources:\n- Book: "You Don\'t Know JS: Scope & Closures" by Kyle Simpson.\n\n- Online Course: "JavaScript Patterns" on Udemy.\n\n- Articles:\n"Understanding JavaScript Closures" on Medium.\n\n"Mastering JavaScript Modules" on Dev.to.',
+    body: 'A purple card',
     colors: {
       id: "color-purple",
       colorHeader: "#FED0FD",
       colorBody: "#FEE5FD",
       colorText: "#18181A",
     },
-    position: { x: 505, y: 10 },
+    position: { x: 400, y: 50 },
   },
   {
-    body: 'Resources:\n- Book: "You Don\'t Know JS: Scope & Closures" by Kyle Simpson.\n\n- Online Course: "JavaScript Patterns" on Udemy.\n\n- Articles:\n"Understanding JavaScript Closures" on Medium.\n\n"Mastering JavaScript Modules" on Dev.to.',
+    body: 'A blue card',
     colors: {
       id: "color-blue",
       colorHeader: "#9BD1DE",
       colorBody: "#A6DCE9",
       colorText: "#18181A",
     },
-    position: { x: 305, y: 110 },
+    position: { x: 300, y: 500 },
   },
   {
-    body: 'Resources:\n- Book: "You Don\'t Know JS: Scope & Closures" by Kyle Simpson.\n\n- Online Course: "JavaScript Patterns" on Udemy.\n\n- Articles:\n"Understanding JavaScript Closures" on Medium.\n\n"Mastering JavaScript Modules" on Dev.to.',
+    body: 'A yellow card',
     colors: {
       id: "color-yellow",
       colorHeader: "#FFEFBE",
       colorBody: "#FFF5DF",
       colorText: "#18181A",
     },
-    position: { x: 605, y: 500 },
+    position: { x: 800, y: 300 },
   },
 ];

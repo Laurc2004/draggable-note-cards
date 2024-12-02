@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { autoGrow, setNewOffset, setZIndex } from "../utils.js";
 import Trash from "../icons/Trash";
 
@@ -40,7 +40,10 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
 
   const cardRef = useRef<HTMLDivElement>(null); // 使用正确的 Ref 类型
 
-  useEffect(() => {
+  /* useEffect(() => {
+    autoGrow(textAreaRef);
+  }, []); */
+  useLayoutEffect(() => {
     autoGrow(textAreaRef);
   }, []);
 
@@ -92,7 +95,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
             style={{ backgroundColor: colors.colorHeader }}
             onMouseDown={mouseDown}
         >
-          <Trash />
+          <Trash cardRef={cardRef} />
         </div>
 
         <div className="card-body">

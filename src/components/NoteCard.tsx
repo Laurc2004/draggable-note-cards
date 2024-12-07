@@ -91,6 +91,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
 
   // 处理文本区域输入事件
   const handleTextAreaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    autoGrow(textAreaRef)
     const newBody = e.currentTarget.value;
     setBody(newBody);
   };

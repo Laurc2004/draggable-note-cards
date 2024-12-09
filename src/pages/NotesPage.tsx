@@ -8,12 +8,12 @@ const NotesPage: React.FC = () => {
   // 初始化状态从 localStorage 加载笔记数据
   useEffect(() => {
     let loadedNotes: Note[] = [];
-
     // 判断是否有存储
-    if (localStorage.getItem('note_1')){
-      for (let i = 1; ; i++) {
+    if (localStorage.length !== 0){
+      // 暂时设定最多10张，后面修改
+      for (let i = 1; i <= 10 ; i++) {
         const note = localStorage.getItem(`note_${i}`);
-        if (!note) break
+        if (!note) continue
         const parsedNote: Note = JSON.parse(note);
         loadedNotes.push(parsedNote);
       }

@@ -104,7 +104,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
 
   return (
     <div
-      className="card"
+      className="absolute w-96 rounded-lg cursor-pointer shadow-lg"
       style={{
         backgroundColor: colors.colorBody,
         left: `${position.x}px`,
@@ -113,7 +113,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
       ref={cardRef}
     >
       <div
-        className="card-header"
+        className="bg-[#9bd1de] rounded-t-lg flex justify-between items-center p-2"
         style={{ backgroundColor: colors.colorHeader }}
         onMouseDown={mouseDown} // 当鼠标在header上按下时，触发鼠标按下事件
       >
@@ -122,8 +122,9 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
         </div>
       </div>
 
-      <div className="card-body">
+      <div className="p-4 rounded-b-lg">
         <textarea
+          className="bg-inherit border-none w-full h-full resize-none text-base focus:outline-none"
           ref={textAreaRef}
           style={{ color: colors.colorText }}
           value={body} // 使用受控组件

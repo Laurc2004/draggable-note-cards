@@ -118,7 +118,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
         onMouseDown={mouseDown} // 当鼠标在header上按下时，触发鼠标按下事件
       >
         <div onClick={() => handleDeleteNote()}>
-          <Trash cardRef={cardRef} />
+          <Trash />
         </div>
       </div>
 

@@ -9,21 +9,21 @@ const NotesPage: React.FC = () => {
   useEffect(() => {
     let loadedNotes: Note[] = [];
 
-    defaultNotes.forEach(note => {
-      const storedNote = localStorage.getItem(`note_${note.id}`);
-      if (storedNote) {
-        try {
-          const parsedNote: Note = JSON.parse(storedNote);
-          loadedNotes.push(parsedNote);
-        } catch (error) {
-          console.error(`Error parsing note ${note.id}`, error);
-          loadedNotes.push(note);
-        }
-      } else {
-        loadedNotes.push(note);
-        localStorage.setItem(`note_${note.id}`, JSON.stringify(note));
+    // 判断是否有存储
+    if (localStorage.getItem('note_1')){
+      for (let i = 1; ; i++) {
+        const note = localStorage.getItem(`note_${i}`);
+        if (!note) break
+        const parsedNote: Note = JSON.parse(note);
+        loadedNotes.push(parsedNote);
       }
-    });
+    } else {
+      // 如果没有则从默认卡片中遍历
+      defaultNotes.forEach(note => {
+        localStorage.setItem(`note_${note.id}`, JSON.stringify(note));
+        loadedNotes.push(note);
+      })
+    }
 
     setNotes(loadedNotes);
   }, []);

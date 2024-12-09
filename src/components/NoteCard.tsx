@@ -96,6 +96,12 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
     setBody(newBody);
   };
 
+  // 处理删除事件
+  const handleDeleteNote = () => {
+    cardRef.current?.remove();
+    localStorage.removeItem(`note_${note.id}`);
+  }
+
   return (
     <div
       className="card"
@@ -111,7 +117,9 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
         style={{ backgroundColor: colors.colorHeader }}
         onMouseDown={mouseDown} // 当鼠标在header上按下时，触发鼠标按下事件
       >
-        <Trash cardRef={cardRef} />
+        <div onClick={() => handleDeleteNote()}>
+          <Trash cardRef={cardRef} />
+        </div>
       </div>
 
       <div className="card-body">

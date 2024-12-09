@@ -91,9 +91,16 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
 
   // 处理文本区域输入事件
   const handleTextAreaInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    autoGrow(textAreaRef)
     const newBody = e.currentTarget.value;
     setBody(newBody);
   };
+
+  // 处理删除事件
+  const handleDeleteNote = () => {
+    cardRef.current?.remove();
+    localStorage.removeItem(`note_${note.id}`);
+  }
 
   return (
     <div
@@ -110,7 +117,9 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
         style={{ backgroundColor: colors.colorHeader }}
         onMouseDown={mouseDown} // 当鼠标在header上按下时，触发鼠标按下事件
       >
-        <Trash cardRef={cardRef} />
+        <div onClick={() => handleDeleteNote()}>
+          <Trash />
+        </div>
       </div>
 
       <div className="card-body">

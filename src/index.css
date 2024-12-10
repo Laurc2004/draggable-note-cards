@@ -1,24 +1,27 @@
 /* 引入 Google 字体 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Sans+SC:wght@400;600&display=swap');
 
 :root {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
     color-scheme: light dark;
-    color: #e0e0e0;
+    color: #d1d1d1;
     line-height: 1.6;
     background:
-        linear-gradient(135deg, #1f4037, #99f2c8),
-        radial-gradient(circle at top left, rgba(255,255,255,0.1) 2px, transparent 2px),
-        radial-gradient(circle at bottom right, rgba(255,255,255,0.1) 2px, transparent 2px);
-    background-size: cover, 20px 20px, 20px 20px;
+        linear-gradient(145deg, #0f0f0f, #2a2a2a),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.05) 3px, transparent 3px),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05) 3px, transparent 3px);
+    background-size: cover, 25px 25px, 25px 25px;
     background-blend-mode: overlay;
-    transition: background 0.5s ease;
+    background-attachment: fixed;
+    transition: background 0.8s ease, color 0.8s ease;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: inherit;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 #app {
@@ -27,4 +30,23 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    text-align: center;
+}
+
+/* 滚动条样式 */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #5e5e5e;
 }

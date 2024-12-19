@@ -5,6 +5,7 @@ import Add from "../icons/Add.tsx";
 import colorSchemes from "../assets/colorSchemes.ts";
 import NewNoteCard from "../components/NewNoteCard.tsx";
 import toast from "react-hot-toast";
+import Refresh from "../icons/Refresh.tsx";
 
 const NotesPage: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -48,6 +49,7 @@ const NotesPage: React.FC = () => {
       []
   );
 
+  // 处理新增事件
   const handleAddNote = () => {
     // 生成唯一的 ID，查找一个在 0 到 50 范围内未使用的 ID
     const maxId = 50;
@@ -88,14 +90,23 @@ const NotesPage: React.FC = () => {
     toast.success("Successfully created a new random color note card!")
   };
 
+  // 处理刷新事件
+  const handleRefreshNote = () => {
+    localStorage.clear()
+    window.location.reload();
+  }
+
   return (
       <div>
         <div className="fixed top-0 left-0 mt-2 ml-2 cursor-pointer" onClick={handleAddNote}>
-          <Add />
+          <Add/>
+        </div>
+        <div className="fixed top-0 left-10 mt-2 ml-2 cursor-pointer" onClick={handleRefreshNote}>
+          <Refresh/>
         </div>
         <div className="notes-container">
           {notes.map((note: Note) => (
-              <NoteCard key={note.id} note={note} onUpdate={handleUpdateNote} />
+              <NoteCard key={note.id} note={note} onUpdate={handleUpdateNote}/>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import {Note} from "../components/NoteCard";
 
 export const fakeData: Note[] = [
   {
-    id:1,
+    id: 0,
     body: 'A purple card',
     colors: {
       id: "color-purple",
@@ -13,7 +13,7 @@ export const fakeData: Note[] = [
     position: { x: 400, y: 50 },
   },
   {
-    id:2,
+    id: 1,
     body: 'A blue card',
     colors: {
       id: "color-blue",
@@ -24,7 +24,7 @@ export const fakeData: Note[] = [
     position: { x: 300, y: 500 },
   },
   {
-    id:3,
+    id: 2,
     body: 'A yellow card',
     colors: {
       id: "color-yellow",

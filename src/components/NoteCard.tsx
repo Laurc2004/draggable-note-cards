@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { autoGrow, setNewOffset, setZIndex } from "../utils.js";
 import Trash from "../icons/Trash";
+import toast from "react-hot-toast";
 
 interface NoteCardProps {
   note: Note;
@@ -100,6 +101,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onUpdate }) => {
   const handleDeleteNote = () => {
     cardRef.current?.remove();
     localStorage.removeItem(`note_${note.id}`);
+    toast.success("Successfully deleted the note card");
   }
 
   return (

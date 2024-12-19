@@ -65,8 +65,7 @@ const NotesPage: React.FC = () => {
     // 如果没有找到空闲的 ID，则使用最大的 ID + 1，但要限制最大为 50
     if (newId === -1) {
       // 超过最大 ID，不能创建更多卡片
-      console.log(`${newId} A maximum of 50 cards can be created!`);
-      toast.error("A maximum of 50 cards can be created!");
+      toast.error("A maximum of 50 note cards can be created!");
       return;
     }
     // 随机获取配色方案
@@ -86,6 +85,7 @@ const NotesPage: React.FC = () => {
 
     // 更新状态
     setNotes(prevNotes => [...prevNotes, newNoteCard]);
+    toast.success("Successfully created a new random color note card!")
   };
 
   return (

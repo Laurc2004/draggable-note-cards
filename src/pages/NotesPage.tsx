@@ -6,9 +6,11 @@ import colorSchemes from "../assets/colorSchemes.ts";
 import NewNoteCard from "../components/NewNoteCard.tsx";
 import toast from "react-hot-toast";
 import Refresh from "../icons/Refresh.tsx";
+import Modal from "../components/modal.tsx";
 
 const NotesPage: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 初始化状态从 localStorage 加载笔记数据
   useEffect(() => {
@@ -92,8 +94,14 @@ const NotesPage: React.FC = () => {
 
   // 处理刷新事件
   const handleRefreshNote = () => {
+    setIsModalOpen(true)
+  }
+
+  // 刷新事件
+  const RefreshNote = () => {
     localStorage.clear()
     window.location.reload();
+    setIsModalOpen(false)
   }
 
   return (
@@ -109,6 +117,17 @@ const NotesPage: React.FC = () => {
               <NoteCard key={note.id} note={note} onUpdate={handleUpdateNote}/>
           ))}
         </div>
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <h2 className="text-black font-black mb-4">Warning</h2>
+          <p className="mb-4">This will clear all inputs!</p>
+          <button
+              className="bg-red-600 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+              onClick={() => RefreshNote()}
+          >
+            Confirm
+          </button>
+        </Modal>
       </div>
   );
 };
